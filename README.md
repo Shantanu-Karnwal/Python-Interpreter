@@ -4,10 +4,10 @@ The interpreter is exactly like the python interpreter which takes as input an a
 
 The input is given in the form - 
 
-  statements  s ::=  x = e  |   print e  
-  expressions e ::=  x  |  n  |  e + e  |  e - e  |  e * e  | e / e
-  variables   x
-  integers    n
+statements  s ::=  x = e  |   print e  
+expressions e ::=  x  |  n  |  e + e  |  e - e  |  e * e  | e / e
+variables   x
+integers    n
   
 The first step in the process is to remove any whitespaces from the input string to make the computation easier.
 Then we need to check whether the entered string is an assignment statement or a print statement. 
