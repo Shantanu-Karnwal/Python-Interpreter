@@ -65,30 +65,33 @@ int typecheck(node * &exp)
 {	if(exp == NULL)
 		return 0;
 	int b1,b2;	
-	if(exp->ischar == '+')
-	{	b1 = typecheck(exp->lptr);
-		b2 = typecheck(exp->rptr);
-		if(b1 == b2 && b1 == 1 && b2 == 1)
-			return 1;
-		else 
-			return 0;
-	}
-	else if(exp->ischar == '>')
-	{	b1 = typecheck(exp->lptr);
-		b2 = typecheck(exp->rptr);
-		if(b1 == b2 && b1 == 1 && b2 == 1)
-			return 1;
-		else if(b1 == b2 && b1 == 2 && b2 == 2)
-			return 2;
-		else
-			return 0;
-	}
-	else if(exp->ischar == '!')
-	{	b2 = typecheck(exp->rptr);
-		if(b2 == '2')
-			return 2;
-		else 
-			return 0; 
+	if(exp->ischar == true)
+	{
+		if(exp->symb == '+')
+		{	b1 = typecheck(exp->lptr);
+			b2 = typecheck(exp->rptr);
+			if(b1 == b2 && b1 == 1 && b2 == 1)
+				return 1;
+			else 
+				return 0;
+		}
+		else if(exp->symb == '>')
+		{	b1 = typecheck(exp->lptr);
+			b2 = typecheck(exp->rptr);
+			if(b1 == b2 && b1 == 1 && b2 == 1)
+				return 1;
+			else if(b1 == b2 && b1 == 2 && b2 == 2)
+				return 2;
+			else
+				return 0;
+		}
+		else if(exp->symb == '!')
+		{	b2 = typecheck(exp->rptr);
+			if(b2 == '2')
+				return 2;
+			else 
+				return 0; 
+		}
 	}
 	else if(exp->isint == true)
 	{	return 1;
