@@ -33,3 +33,21 @@ With respect to this exercise, the student should be asked how they designed the
 
 If the student could not tell about the correct parsing method used in the program and somehow completed the program but could not cover all kind of test cases, then it can be inferred that they have insufficient knowledge of the concept.
 
+# Abstract Syntax Tree - Type Checker
+
+For this program, I have assumed that my parser returns the following block after parsing the input. The block contains the following data types - 
+
+1) A symbol of character data type - which can be any artihmetic, logical or branching operator - denoted by a single character. example- '+', '-', '*', '/', '>', '<', '!', etc.
+2) A number of integer data type - and this can be either a decimal or a binary number
+3) A boolean variable that checks whether the block contains a number(decimal or binary) or a character(operator).
+4) A boolean variable that checks whether the block conatins a decimal number or a binary number, if the block conatains a number.
+
+The program conatins functions for input and output of the tree.
+
+The typecheck function returns an integer value with the following significance - 
+
+Returns 0 - Type Mismatch - throw an exception
+Returns 1 - Type Matches and is of an decimal number
+Returns 2 - Type Matches and is of a binary number
+
+First it checks whether the 
