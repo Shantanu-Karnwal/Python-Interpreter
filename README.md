@@ -50,4 +50,8 @@ Returns 0 - Type Mismatch - throw an exception
 Returns 1 - Type Matches and is of an decimal number
 Returns 2 - Type Matches and is of a binary number
 
-First it checks whether the 
+First it checks whether the block is of a character(operator) or not. If it is, it checks what type. So if it is a binary operator like '+' or '>', it will do the corresponding subtree check and find out whether its both operands are integers for the '+' case, and integer or binary for the '>' case. If it mismatches, it will return 0 (i.e throw the exception).
+If the operator is unary, like '!', it will just check the right subtree and check whether the value in the right subtree is a binary value or not. If it is binary, it returns 2 otherwise it returns 0.
+
+If the block is of a number, it checks whether the number is decimal or binary. If the number is decimal, the function returns 1 and if binary, the function returns 2.
+Hence in this way, the typechecker function clearly finds out the proper type of the expression given in the input in the form of abstract syntax tree.
